@@ -1,0 +1,72 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <span><button class="home border-0 btn btn-primary">Home</button></span>
+            </div>
+
+            <div class="col-md-4">
+                <span><button (click)='logout()'  class="home border-0 btn btn-primary">Logout</button></span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4"></div>
+                <div class="col-md-4 loginbox">
+                    <form #user="ngForm" enctype="multipart/form-data"  (ngSubmit)="submit(user.value) "> 
+                           
+                                <label class="college">Select College Name</label>
+                                <div style="background-color:white !important;" class="form-control custlog" >
+                                    <ng-select style="background-color:white !important;" name="college" (click)="changeLeagueOwner()" [(ngModel)]="selectedCar">
+                                        <ng-option style="background-color:white !important;"   *ngFor="let college of message"  [value]="college.college_name">{{college.college_name}}</ng-option>
+                                    </ng-select>
+                                </div>
+
+                                <label class="branch">Branch</label>
+                                <div class="form-control custlog" >
+                                    <ng-select style="background-color:white !important;" name="branch" (click)="changebranch()" [(ngModel)]="selectedbranch">
+                                        <ng-option style="background-color:white !important;"   *ngFor="let branches of branch_name"  [value]="branches.branch">{{branches.branch}}</ng-option>
+                                    </ng-select>
+                                </div>
+
+                                <label class="division">Division</label>
+                                <input class="form-control custlog" ngModel name="division" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
+                                        <datalist id="datalistOptions">
+                                        <option value="San Francisco">
+                                        <option value="New York">
+                                        <option value="Seattle">
+                                        <option value="Los Angeles">
+                                        <option value="Chicago">
+                                </datalist>
+
+                                <label class="college">Batch</label>
+                                <input class="form-control custlog" ngModel name="batch" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
+                                        <datalist id="datalistOptions">
+                                        <option value="San Francisco">
+                                        <option value="New York">
+                                        <option value="Seattle">
+                                        <option value="Los Angeles">
+                                        <option value="Chicago">
+                                </datalist>
+
+                                <label class="college">Select Date</label>
+                                <input type="date" class="form-control custlog" ngModel name="date">
+
+                                <label class="college">Session Start Time</label>
+                                <input type="time" class="form-control custlog" ngModel name="start_time">
+
+                                <label class="college">Session End Time</label>
+                                <input type="time" class="form-control custlog" ngModel name="end_time">
+
+                                <button type="submit" class="loginbutton btn btn-primary">Submit</button>
+                            </form>  
+                </div>         
+        </div>
+    </div>
+</body>
+ 
+<router-outlet></router-outlet>

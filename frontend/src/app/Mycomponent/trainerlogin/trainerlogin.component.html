@@ -1,0 +1,135 @@
+<style>
+    body{
+        top: 0px;
+        left: 0px;
+        /* width: 1920px;
+        height: 1080px; */
+        /* UI Properties */
+        background: transparent linear-gradient(180deg, #F3F5FF 0%, #FFFFFF 100%) 0% 0% no-repeat padding-box;
+        opacity: 1;
+    }
+    .loginbox
+    {
+        margin-bottom:50px;
+        margin-top:160px;
+        top: 160px !important;
+        left: 780px;
+        width: 360px;
+        height: 750px;
+        /* UI Properties */
+        background: #FFFFFF 0% 0% no-repeat padding-box;
+        box-shadow: 0px 3px 6px #0000005C;
+        border: 1px solid #D6436D;
+        border-radius: 2px;
+        opacity: 1;
+    }
+
+    .labelsluser
+    {
+        margin-top: 273px;
+        left: 797px;
+        width: 70px;
+        height: 25px;
+        /* UI Properties */
+        text-align: left;
+        font: normal normal medium 18px/27px Poppins;
+
+        letter-spacing: 0px;
+        color: #002347;
+        opacity: 1;
+    }
+    .labelspass
+    {
+        margin-top: 20px;
+        left: 797px;
+        width: 88px;
+        height: 25px;
+        /* UI Properties */
+        text-align: left;
+        font: normal normal medium 18px/27px Poppins;
+        letter-spacing: 0px;
+        color: #002347;
+        opacity: 1;
+    }
+    .custlog
+    {
+        top: 583px;
+        left: 797px;
+        /* width: 326px;
+        height: 50px; */
+        /* UI Properties */
+        background: #FFFFFF 0% 0% no-repeat padding-box;
+        border: 2px solid #D6436D;
+        border-radius: 5px;
+        opacity: 1;
+    }
+
+    .loginbutton
+    {
+        margin-top: 50px;
+        margin-left: 80px;
+        width: 150px;
+        height: 50px;
+        /* UI Properties */
+        background: #D6436D 0% 0% no-repeat padding-box;
+        color:white;
+        border-radius: 5px;
+        opacity: 1;
+    }
+    .home
+    {
+        margin-top: 52px;
+        left: 100px;
+        width: 150px;
+        height: 50px;
+        /* UI Properties */
+        background: #FFFFFF 0% 0% no-repeat padding-box;
+        opacity: 1;
+        color:black
+    }
+    .logout
+    {
+        margin-top: 52px;
+        margin-left: 350px;
+        width: 150px;
+        height: 50px;
+        /* UI Properties */
+        background: #FFFFFF 0% 0% no-repeat padding-box;
+        opacity: 1;
+        color:black;
+        
+    }
+</style>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <span><button class="home border-0 btn btn-primary">Home</button></span>
+
+        </div>
+
+        <div class="col-md-4">
+            <button class="logout border-0 btn btn-primary">Log out</button>
+        </div>
+    </div>
+    <div class="row">
+
+        <div class="col-md-4"></div>
+        <div class="col-md-4 loginbox">  
+            <form #user="ngForm" (ngSubmit)="submit(user.value)"> 
+                <img src="">
+                
+                <label class="labelsluser">Login ID</label>
+                <input type="text" ngModel class="form-control custlog" name="username">
+                <label class="labelspass">Password</label>
+                <input type="password" ngModel class="form-control custlog" name="password">
+                <button type="submit"  class="loginbutton btn btn primary"> Login</button>
+            </form>
+        </div>
+    </div>
+   
+       
+   
+        
+    </div>
+</body>

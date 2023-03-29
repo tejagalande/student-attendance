@@ -1,0 +1,119 @@
+
+<head>
+    <meta charset="utf-8">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script> -->
+    
+    <style>
+       
+    </style>
+ 
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <span><button class="home border-0 btn btn-primary">Home</button></span>
+            </div>
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+
+                <span><button (click)='logout()'  class="home border-0 btn btn-primary">Logout</button></span>
+            </div>
+        </div>
+        <!-- <p>{{message}}</p> -->
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4 loginbox">
+                <img src="{{path}}" class="logo">
+
+                <!-- <div *ngFor="let country of message">
+                    <label>Country Capital:</label>
+                    <p>{{ country.id }} </p>
+                </div> -->
+
+
+                     
+                <form #user="ngForm" enctype="multipart/form-data"  (ngSubmit)="submit(user.value) "> 
+                        <label style="margin-top:35px" class="college">Select College Name</label>
+                        <!-- <select class="js-example-basic-multiple" name="states[]" multiple="multiple">
+                            <option value="AL">Alabama</option>
+                              ...
+                            <option value="WY">Wyoming</option>
+                          </select> -->
+                          <!-- <p *ngIf="message" class="message">{{message.id}}</p> -->
+                          
+                          <!-- <p *ngFor="let car of message">{{car}}</p> -->
+                          <div style="background-color:white !important;" class="form-control custlog" >
+                            <ng-select style="background-color:white !important;" name="college" (click)="changeLeagueOwner()" [(ngModel)]="selectedCar">
+                                <ng-option style="background-color:white !important;"   *ngFor="let college of message"  [value]="college.id">{{college.college_name}}</ng-option>
+                            </ng-select>
+                          </div>
+                        <!-- <input ngModel class="form-control custlog" list="datalistOptionscollge" name="college" id="exampleDataList1" placeholder="Type to search...">
+                                <datalist id="datalistOptionscollge">
+                                <option value="Rajarambapu Information Technology">
+                                <option value="Sanjay Bhokare Group Of Institute">
+                                <option value="Padmbhushan Vasantdada Patil College Of Engineering">
+                        </datalist> -->
+
+                        <label class="college">Branch</label>
+
+                        <div class="form-control custlog" >
+                            <ng-select (click)="changebranch()" name="branch" [(ngModel)]="selectedbranch">
+                                <ng-option style="background-color:white !important;"  *ngFor="let branches of branch"  [value]="branches.id">{{branches.branch}}</ng-option>
+                            </ng-select>
+                        </div>
+                
+
+                        <label class="college">Division</label>
+                        <input ngModel class="form-control custlog" list="divdatalistOptions" name="division" id="exampleDataList3" placeholder="Type to search...">
+                                <datalist id="divdatalistOptions">
+                                        <option value="A">
+                                        <option value="B">
+                                        <option value="C">
+                                        <option value="D">
+                                        <option value="E">
+                                </datalist>
+
+                        <label class="college">Batch</label>
+                        <input ngModel class="form-control custlog" list="batch" name="batch" id="exampleDataList4" placeholder="Type to search...">
+                                <datalist id="batch">
+                                <option value="A1">
+                                <option value="A2">
+                                <option value="A3">
+                                <option value="A4">
+                                <option value="A5">
+                        </datalist><br>
+
+                        <input type="file" accept=".xlsx" 
+                        id="file" 
+                        type="file" ngModel name="excel_file" class="" (change)="onFileChange($event)" id="download" file-model="download">Upload Excel Sheet
+
+                        <!-- <div ng-controller = "myCtrl">    
+                            <button  class="loginbutton btn btn-primary">
+                                <input type="file"   accept=".xlsx" style="opacity: 0;
+                                position: absolute;" (change)="onFileChange($event)"  name="excel_file" class="" id="download" file-model="download">Upload Excel Sheet
+                            </button>    
+                        </div> -->
+
+                        <!-- <input 
+                            hidden 
+                            type="file" 
+                            #uploader
+                            (change)="onFileChange($event)"
+                        /> -->
+                        <!-- <button type="button" ion-button (click)="selectFile()"></button> -->
+
+                        <button  type="submit"  class="loginbutton btn btn-primary">Submit</button>
+                </form>
+              
+                <button type="button" class="download btn btn-default"><i  class="fa-solid fa-cloud-arrow-down"></i> Download Sample Sheet</button>
+              
+                <p *ngIf="div2" class="message">{{message}}</p>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+ 

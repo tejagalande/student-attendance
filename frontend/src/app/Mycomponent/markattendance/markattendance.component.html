@@ -1,0 +1,116 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+  
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <span><button class="home border-0 btn btn-primary">Home</button></span>
+            </div>
+            <div class="col-md-4">  </div>
+            <div class="col-md-4">
+                
+                    <span><button (click)='logout()'  class="home border-0 btn btn-primary">Logout</button></span>
+            </div>
+        </div>
+       
+        <!-- <p style="color:blueviolet;">I, {{teacher.name}}, I will teach you {{teacher.subject}}, {{principleName}}.</p> -->
+        <!-- <p>{{trainerdata}}</p> -->
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4 loginbox">
+                <form #user="ngForm"   (ngSubmit)="submit(user.value) "> 
+                        <label class="attendancelabel">College</label>  
+                        <input type="text" class="form-control custlog" ngmodel readonly [(ngModel)]="college" value="{{college}}" name="clg_nm" >
+                                
+                        <label class="attendancelabel">Branch</label>  
+                                <input type="text" class="form-control custlog"  [(ngModel)]="branch"  value="{{branch}}"  readonly  name="branch"  >
+                                    
+                        <!-- <label class="attendancelabel">batch</label>  
+                                <input type="text" class="form-control custlog"   readonly value="{{batch}}"  name="college_name"> -->
+                        <div style="margin-top:20px; float:left">
+                            <span style="text-align: center;
+                            font: normal normal medium 13px/20px Poppins;
+                            letter-spacing: 0px;
+                            color: #D6436D;
+                            opacity: 1;">Division</span>&nbsp;&nbsp;<span><input type="text" class="" [(ngModel)]="div" name="division" value="{{div}}"  style="width:80px;background: #FFFFFF 0% 0% no-repeat padding-box;
+                                border: 1px solid #707070;
+                                opacity: 1;"></span><br>
+
+                            <span style="margin-top:20px;text-align: center;
+                            font: normal normal medium 13px/20px Poppins;
+                            letter-spacing: 0px;
+                            color: #D6436D;
+                            opacity: 1;">Date:</span>&nbsp;&nbsp;<span><input type="text" class="" [(ngModel)]="date" name="lecture_date" value=""  style="margin-left:20px;margin-top:20px;width:80px;background: #FFFFFF 0% 0% no-repeat padding-box;
+                                border: 1px solid #707070;
+                                opacity: 1;"></span>
+
+                        </div>
+                        <div style="margin-top:20px; float:right">
+                            <span style="
+                            font: normal normal medium 13px/20px Poppins;
+                            letter-spacing: 0px;
+                            color: #D6436D;
+                            opacity: 1;">Batch</span>&nbsp;&nbsp;<span><input type="text" [(ngModel)]="batch" name="batch" value="{{batch}}"  class="" style="width:50px;background: #FFFFFF 0% 0% no-repeat padding-box;
+                                border: 1px solid #707070;
+                                opacity: 1;"></span><br>
+
+                            <span style="margin-top:20px;text-align: center;
+                            font: normal normal medium 13px/20px Poppins;
+                            letter-spacing: 0px;
+                            color: #D6436D;
+                            opacity: 1;">Time:</span>&nbsp;&nbsp;<span><input type="text" class="" [(ngModel)]="start_time" name="start_time" value="{{start_time}}"  style="margin-top:20px;width:50px;background: #FFFFFF 0% 0% no-repeat padding-box;
+                                border: 1px solid #707070;
+                                opacity: 1;"></span> 
+                        </div>
+
+                    
+                        <input class="form-control search" list="datalistOptions"  id="exampleDataList" name="search" placeholder="Search">
+                                <datalist id="datalistOptions">
+                                <option value="San Francisco">
+                                <option value="New York">
+                                <option value="Seattle">
+                                <option value="Los Angeles">
+                                <option value="Chicago">
+                        </datalist>
+
+                        <div  class="attendancebox overflow-auto" style="padding-top:10px;padding-left:5px;padding-right: 5px;">
+                            <h5 *ngIf="div2" class="message">{{msg}}</h5>
+                        
+                                    <div *ngIf="div1">
+                                            <div *ngFor="let student of student_details; let i = index" class="studentname">
+                                                <input type="hidden" [(ngModel)]="student.excel_meta_id" value="{{student.excel_meta_id}}" name="excel_meta_id" >
+                                                <input type="hidden" [(ngModel)]=" stu_lenght" name="lenght" >
+                                                <input type="hidden" [(ngModel)]="student.prn" [name]="'prn'+i" >
+                                                <input type="hidden" [(ngModel)]="student.name" [name]="'student_name' + i" value="{{student.name}}">
+                                                <input type="hidden" [(ngModel)]="student.mobile_number" [name]="'mobile_number' + i" value="{{student.mobile_number}}">
+                                                <span class="student-details" style="
+                                                            letter-spacing: 0px;
+                                                            color: #002347 !important;
+                                                            opacity: 1;">{{student.prn}} {{student.name}} 
+                                                            <!-- 1554026 Rakesh Kamble -->
+                                                </span>
+                                                            
+                                                <span style="float:right;width:50px;background: #FFFFFF 0% 0% no-repeat padding-box;"
+                                                    class="material-switch pull-right">
+                                                            <input  class="check21"  ngModel id="{{student.id}}" value="present" [name]="'attendance' + i"  type="checkbox"/>
+                                                            <label  for="{{student.id}}" style="background-color:#FFFFFF !important;" class="label-default"></label>
+                                                </span>
+                                            </div>
+                                    </div>
+                                    
+                        
+
+                        </div> 
+                        <button type="submit"  class="loginbutton btn btn-primary">Submit</button>
+                </form>
+            </div>
+       
+            <div class="col-md-4"></div>
+        </div>
+    </div>    
+</body>

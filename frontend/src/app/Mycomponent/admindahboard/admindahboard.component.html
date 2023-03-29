@@ -1,0 +1,30 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <span><button class="home border-0 btn btn-primary">Home</button></span>
+            </div>
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+
+                <span><button (click)='logout()' class="home border-0 btn btn-primary">Logout</button></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4 loginbox">
+                <img src="{{path}}" class="logo"><br>
+                <button [routerLink]="'/uploadexcel'" type="button" class="uploadbtn btn btn-default">Upload <br> Data</button>
+
+                <button [routerLink]="'/downloaddata'" type="button" class="downloadbtn btn btn-default">Download <br> Data</button>
+            </div>
+        </div>
+    </div>               
+</body>
+
+
